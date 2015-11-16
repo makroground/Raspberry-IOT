@@ -22,9 +22,37 @@ namespace TestRasp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DispatcherTimer appTimer = new DispatcherTimer();
+        int countTicks = 0;
+
         public MainPage()
         {
             this.InitializeComponent();
+            appTimer.Interval = new TimeSpan(0, 0, 1);
+            appTimer.Tick += appTimer_Tick;
+        }
+
+        private void btn_startTimer_Click(object sender, RoutedEventArgs e)
+        {
+            appTimer.Start();
+        }
+
+
+        private void appTimer_Tick(object sender, object e)
+        {
+            countTicks++;
+            lbl_result.Text = "TimerTicks:= " + countTicks;
+
+            if (countTicks >= 10)
+            {
+                appTimer.Stop();
+                countTicks = 0;
+            }
+        }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
         }
     }
 }

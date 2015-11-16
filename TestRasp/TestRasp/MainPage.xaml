@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,-0.375,0">
+        <TextBlock x:Name="lbl_result" HorizontalAlignment="Left" Margin="51,40,0,0" TextWrapping="Wrap" Text="TimerTicks:= 0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_startTimer" Content="Start Timer" HorizontalAlignment="Left" Margin="202,40,0,0" VerticalAlignment="Top" Click="btn_startTimer_Click"/>
+        <Button x:Name="btn_close" Content="Close App" HorizontalAlignment="Left" Margin="207,147,0,0" VerticalAlignment="Top" Click="btn_close_Click"/>
 
     </Grid>
 </Page>
